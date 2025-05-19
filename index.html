@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <!--For the slideshow-->
+  <style>
+  /* .header{
+    position: absolute;
+  } */
+
+    .slideshow {
+      width: 600px;
+      height: 300px;
+      position: relative;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .slideshow img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      animation: fade 12s infinite;
+    }
+
+    .slideshow img:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .slideshow img:nth-child(2) {
+      animation-delay: 4s;
+    }
+
+    .slideshow img:nth-child(3) {
+      animation-delay: 8s;
+    }
+
+    @keyframes fade {
+      0%   { opacity: 0; }
+      10%  { opacity: 1; }
+      30%  { opacity: 1; }
+      40%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+  </style>   
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kenseikhan Karate</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-200 font-sans">
+  <!-- Navigation -->
+  <nav class="text-xl p-3 sticky top-0 z-10" style="background-color: rgb(250, 248, 152);-webkit-text-fill-color: rgb(28, 19, 3);">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="header text-3xl font-bold" style="text-shadow: -1px 0 rgb(18, 163, 231), 0 1px black, 1px 0 black, 0 -1px black;color:rgba(14, 14, 14, 0.89);font-size: 80;">Kenseikhan Karate-Sri Lanka</h1>
+      <ul class="flex space-x-6">
+        <li><a href="#home" class="hover:text-gray-300">Home</a></li>
+        <li><a href="#about" class="hover:text-gray-300">About</a></li>
+        <li><a href="#classes" class="hover:text-gray-300">Classes</a></li>
+        <li><a href="#instructors" class="hover:text-gray-300">Instructors</a></li>
+        <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="bg-cover bg-center h-screen text-white flex items-center" style="background-image: url('https://th.bing.com/th/id/R.10c5e2fd3d0fbf3dc7852b9f478afc17?rik=8wjdDdzEMCopvg&riu=http%3a%2f%2fcliparts.co%2fcliparts%2f8TE%2fbKo%2f8TEbKoA7c.gif&ehk=s0NhpS7FI5TUlxhjwOOTnNU4IpML%2bxgMnYjwGfXdjp4%3d&risl=&pid=ImgRaw&r=0')">
+    <div class="container mx-auto text-center">
+      <h1 class="text-5xl font-bold mb-4" style="text-shadow: -1px 0 rgb(63, 62, 62), 0 1px black, 1px 0 black, 0 -1px black;color:rgba(241, 30, 30, 0.89);font-size: 80;">Kenseikhan Karate</h1>  
+      <h2 class="text-3xl font-bold mb-4" style="text-shadow: -1px 0 rgb(63, 62, 62), 0 1px black, 1px 0 black, 0 -1px black;color:rgba(241, 30, 30, 0.89);font-size: 80;" >House Of Fist And Honesty</h2>
+      <p class="text-xl mb-6" style="text-shadow: -1px 0 rgb(63, 62, 62), 0 1px black, 1px 0 black, 0 -1px black;color:rgba(241, 30, 30, 0.89);font-size: 80;">Join with us to build strength, discipline, and confidence.</p>
+      <a href="#contact" class="bg-blue-900 text-white px-6 py-3 rounded hover:bg-blue-700">TAP TO JOIN</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8">About Us</h2>
+      <p class="text-lg max-w-2xl mx-auto">Kenseikhan Karate Academy is dedicated to teaching traditional Karate with a focus on discipline, respect, and personal growth. Founded in 1984, our dojo has trained hundreds of students to achieve their black belts and beyond.</p>
+      <div class="slideshow">
+        <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/61724679_115990592977892_3929219035102707712_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeFiZsX7j79KNgWYoWlVDwDdhivewrg52b2GK97CuDnZvU-kPMSRLF1h6oEs03quwVpaXRaTCwoTami0x-m2TZ1u&_nc_ohc=UCUAqQijCVsQ7kNvwFHbL7X&_nc_oc=AdnA50q-yl8mlC0s3L9PgFOg3L4ismhdIMLLxydZGJHftOqadtn2UcF7GbYunnrZTtD3j5ehfwSFxHhR4ZCMeeTJ&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=SibmJbKKLyVSkhyA4cVouA&oh=00_AfFuCbF34qUs_e8rQ3dak3IeHc6Da6OzWv1sYzt8TNIK1w&oe=6831EE66" alt="Image 1">
+        <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/459296894_8084720461639061_7259945575473708489_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeGj6dg-lDTjbnQBquViSO9IoD52XLay8vugPnZctrLy-8AQtFJN9VGJq5CxtHQG32hyI88gIjQiH-1LQInc73qJ&_nc_ohc=sW6D2gbar5oQ7kNvwGHJjCd&_nc_oc=AdmvxO5GaVLgw2J7L6XY25wR9_h5XhNxoZEdA7PSF6cuq9Uy0AV9wG8Erm7vVqme8cURr_-8Kk8rumHPJybhZlus&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=JvqzkQ_D1OPpM4Tj62QXlw&oh=00_AfFU_Fs_SoxxGOjH7sTWzsqUj0Mc3BWGF_z8lBANnnCtsw&oe=68104D76" alt="Image 2">
+        <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/464373289_27758032467128402_2593849887818832023_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=aa7094&_nc_eui2=AeFuSd0RPGjo2M8g_-F8a8qoAoD5Niz2n3sCgPk2LPafe1bDrtjFKcSLPn7JCxIhN-WeXdapwRcolYcuhu42390P&_nc_ohc=cr6QudM2gkkQ7kNvwH4I7_f&_nc_oc=Admzk72DkjmHTRc9oUBLgPjLoV0ZMW_B4xEp8qWUaTvpBC-KA3vfefjLSmwtwCwMFKwEs4fIlXTVYOvRBa8jl6BP&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=YCNaBfgwxHq8Z8Gmf6jFzQ&oh=00_AfForZ8L49zXc1JIIBY0mZMwIFXxWD2JgKcOhmrKZfAkKQ&oe=68104D40" alt="Image 3">
+        <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/490596895_1407870427202371_1723937823369081584_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHvm3SdJIvmpw0sRMmsOpbXlLELSuiiiayUsQtK6KKJrBQI_A-fkDAHBtWECmlGZG0BKS5rYPuUngHIHznuP3V3&_nc_ohc=TgzLazN2GjoQ7kNvwGvqOU5&_nc_oc=AdlqWMYOFefJaRQyjy0y4RmC-74PYw9S0vrM_X4hTt-tgT-jov_qL7I-g5_Gz_W3co8U5SJh860q4-PHofiuE_lR&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=ZmGgAo15z9EJQLAech9xHw&oh=00_AfF_WHov0fTwWuObiVHRPJt15aH2FFzVm6KIU7cmQwUuEA&oe=6810529B" alt="Image 4">
+        <img src="" alt="Image 5">
+        <img src="" alt="Image 6">
+        <img src="" alt="Image 7">
+        <img src="" alt="Image 8">
+        
+      </div>    
+    </div>
+  </section>
+
+  <!-- Classes Section -->
+  <section id="classes" class="bg-gray-200 py-16">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8">Our Classes</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded shadow">
+          <h3 class="text-xl font-bold mb-4">Beginner Karate</h3>
+          <p>For ages 6+, learn the fundamentals of Karate, including stances, punches, and kicks.</p>
+          <p class="mt-4 font-semibold">Mon/Wed: 5:00 PM - 6:00 PM</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow">
+          <h3 class="text-xl font-bold mb-4">Intermediate Karate</h3>
+          <p>Build on your skills with advanced techniques and sparring practice.</p>
+          <p class="mt-4 font-semibold">Tue/Thu: 6:00 PM - 7:00 PM</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow">
+          <h3 class="text-xl font-bold mb-4">Black Belt Training</h3>
+          <p>Exclusive training for advanced students aiming for mastery.</p>
+          <p class="mt-4 font-semibold">Fri: 7:00 PM - 8:30 PM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instructors Section -->
+  <section id="instructors" class="py-16">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8">Our Instructors</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="flex items-center bg-white p-6 rounded shadow">
+          <img src="https://images.unsplash.com/photo-1598973963653-9b97f2cb64df?q=80&w=2070&auto=format&fit=crop" alt="Instructor" class="w-24 h-24 rounded-full mr-4">
+          <div>
+            <h3 class="text-xl font-bold">Sensei John Doe</h3>
+            <p>5th Dan Black Belt with 20 years of teaching experience.</p>
+          </div>
+        </div>
+        <div class="flex items-center bg-white p-6 rounded shadow">
+          <img src="https://images.unsplash.com/photo-1601820843569-13210b5e0db0?q=80&w=2070&auto=format&fit=crop" alt="Instructor" class="w-24 h-24 rounded-full mr-4">
+          <div>
+            <h3 class="text-xl font-bold">Sensei Jane Smith</h3>
+            <p>3rd Dan Black Belt specializing in youth training.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-blue-900 text-white py-16">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8">Contact Us</h2>
+      <p class="text-lg max-w-2xl mx-auto mb-6">Ready to start your Karate journey? Reach out to us for more information or to schedule a free trial class.</p>
+      <div class="space-y-4">
+        <p><strong>Email:</strong> info@dragonkarate.com</p>
+        <p><strong>Phone:</strong> (123) 456-7890</p>
+        <p><strong>Address:</strong> 123 Dojo Lane, Martial City, MC 12345</p>
+      </div>
+      <div class="mt-8">
+        <input type="email" placeholder="Enter your email" class="p-3 rounded-l text-black" id="emailInput">
+        <button class="bg-white text-blue-900 p-3 rounded-r hover:bg-gray-200" onclick="subscribe()">Subscribe</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white p-4 text-center">
+    <p>&copy; 2025 Dragon Karate Academy. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function subscribe() {
+      const email = document.getElementById('emailInput').value;
+      if (email) {
+        alert('Thank you for subscribing! We will contact you soon.');
+        document.getElementById('emailInput').value = '';
+      } else {
+        alert('Please enter a valid email address.');
+      }
+    }
+  </script>
+</body>
+</html>
