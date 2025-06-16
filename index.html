@@ -5,172 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kenseikhan Karate</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Custom Slideshow Styles */
-    .slideshow {
-      width: 100%;
-      max-width: 800px;
-      height: 250px;
-      position: relative;
-      margin: auto;
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    @media (min-width: 768px) {
-      .slideshow {
-        height: 350px;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .slideshow {
-        height: 400px;
-      }
-    }
-
-    .slideshow img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      animation: fade 16s infinite;
-    }
-
-    .slideshow img:nth-child(1) {
-      animation-delay: 0s;
-    }
-
-    .slideshow img:nth-child(2) {
-      animation-delay: 4s;
-    }
-
-    .slideshow img:nth-child(3) {
-      animation-delay: 8s;
-    }
-
-    .slideshow img:nth-child(4) {
-      animation-delay: 12s;
-    }
-
-    @keyframes fade {
-      0%   { opacity: 0; }
-      6.25%  { opacity: 1; }
-      25%  { opacity: 1; }
-      31.25%  { opacity: 0; }
-      100% { opacity: 0; }
-    }
-
-    /* Custom Text Shadow */
-    .text-shadow-strong {
-      text-shadow: -1px 0 rgb(63, 62, 62), 0 1px black, 1px 0 black, 0 -1px black;
-    }
-
-    .text-shadow-header {
-      text-shadow: -1px 0 rgb(18, 163, 231), 0 1px black, 1px 0 black, 0 -1px black;
-    }
-
-    /* Mobile Menu Styles */
-    .mobile-menu {
-      display: none;
-    }
-
-    .mobile-menu.active {
-      display: block;
-    }
-
-    /* Smooth Scrolling */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Hero Background */
-    .hero-bg {
-      background-image: url('https://th.bing.com/th/id/R.10c5e2fd3d0fbf3dc7852b9f478afc17?rik=8wjdDdzEMCopvg&riu=http%3a%2f%2fcliparts.co%2fcliparts%2f8TE%2fbKo%2f8TEbKoA7c.gif&ehk=s0NhpS7FI5TUlxhjwOOTnNU4IpML%2bxgMnYjwGfXdjp4%3d&risl=&pid=ImgRaw&r=0');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
-
-    @media (max-width: 768px) {
-      .hero-bg {
-        background-attachment: scroll;
-      }
-    }
-
-    /* Responsive Typography */
-    .hero-title {
-      font-size: 2rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1.5rem;
-    }
-
-    .hero-text {
-      font-size: 1rem;
-    }
-
-    @media (min-width: 768px) {
-      .hero-title {
-        font-size: 3rem;
-      }
-      .hero-subtitle {
-        font-size: 2rem;
-      }
-      .hero-text {
-        font-size: 1.25rem;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .hero-title {
-        font-size: 4rem;
-      }
-      .hero-subtitle {
-        font-size: 2.5rem;
-      }
-      .hero-text {
-        font-size: 1.5rem;
-      }
-    }
-
-    /* Header responsive text */
-    .header-title {
-      font-size: 1.25rem;
-    }
-
-    @media (min-width: 768px) {
-      .header-title {
-        font-size: 1.875rem;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .header-title {
-        font-size: 2.25rem;
-      }
-    }
-
-    /* Hover Effects */
-    .hover-scale:hover {
-      transform: scale(1.05);
-      transition: transform 0.3s ease;
-    }
-
-    .card-hover:hover {
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      transition: box-shadow 0.3s ease;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="bg-gray-200 font-sans">
   <!-- Navigation -->
-  <nav class="text-xl p-3 sticky top-0 z-50 shadow-lg" style="background-color: rgb(250, 248, 152); color: rgb(28, 19, 3);">
+  <nav class="text-xl p-3 sticky top-0 z-50 shadow-lg" style="background-color: rgb(189, 185, 185); color: rgb(4, 88, 81);">
     <div class="container mx-auto flex justify-between items-center px-4">
-      <h1 class="header-title font-bold text-shadow-header text-gray-800">
+      <h1 class="header-title font-bold text-shadow-header text-outline-black drop-shadow-lg">
         Kenseikhan Karate-Sri Lanka
       </h1>
       
@@ -204,26 +46,27 @@
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="hero-bg h-screen text-white flex items-center relative">
-    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
-    <div class="container mx-auto text-center px-4 relative z-10">
-      <h1 class="hero-title font-bold mb-4 text-shadow-strong text-red-500">
-        Kenseikhan Karate
-      </h1>  
-      <h2 class="hero-subtitle font-bold mb-4 text-shadow-strong text-red-500">
-        House Of Fist And Honesty
-      </h2>
-      <p class="hero-text mb-6 text-shadow-strong text-red-500 max-w-2xl mx-auto">
-        Join with us to build strength, discipline, and confidence.
-      </p>
-      <a href="#contact" class="inline-block bg-blue-900 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 text-lg font-semibold hover-scale">
-        TAP TO JOIN
-      </a>
-    </div>
-  </section>
+  <section id="home" class="relative h-screen text-white flex items-center justify-center bg-cover bg-center bg-no-repeat" style="background-image: url('back2.jpg');">
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  <div class="relative z-10 text-center px-4 max-w-3xl mx-auto">
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-4 text-outline-black drop-shadow-lg">
+    Kenseikhan Karate
+    </h1>
+    <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-outline-black drop-shadow-lg">
+      House Of Fist And Honesty
+    </h2>
+    <p class="text-lg md:text-xl mb-6 text-outline-black drop-shadow-lg">
+      Join with us to build strength, discipline, and confidence.
+    </p>
+    <a href="#contact" class="inline-block bg-blue-900 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300 text-lg font-semibold transform hover:scale-105">
+      TAP TO JOIN
+    </a>
+  </div>
+</section>
 
   <!-- About Section -->
-  <section id="about" class="py-16">
+  <section id="about" class="py-16 bg-white">
     <div class="container mx-auto text-center px-4">
       <h2 class="text-3xl md:text-4xl font-bold mb-8">About Us</h2>
       <p class="text-lg max-w-4xl mx-auto mb-12 leading-relaxed">
@@ -232,12 +75,12 @@
       
       <!-- Responsive Slideshow -->
       <div class="slideshow">
-        <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/61724679_115990592977892_3929219035102707712_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeFiZsX7j79KNgWYoWlVDwDdhivewrg52b2GK97CuDnZvU-kPMSRLF1h6oEs03quwVpaXRaTCwoTami0x-m2TZ1u&_nc_ohc=UCUAqQijCVsQ7kNvwFHbL7X&_nc_oc=AdnA50q-yl8mlC0s3L9PgFOg3L4ismhdIMLLxydZGJHftOqadtn2UcF7GbYunnrZTtD3j5ehfwSFxHhR4ZCMeeTJ&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=SibmJbKKLyVSkhyA4cVouA&oh=00_AfFuCbF34qUs_e8rQ3dak3IeHc6Da6OzWv1sYzt8TNIK1w&oe=6831EE66" alt="Karate Training 1">
-        <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/459296894_8084720461639061_7259945575473708489_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeGj6dg-lDTjbnQBquViSO9IoD52XLay8vugPnZctrLy-8AQtFJN9VGJq5CxtHQG32hyI88gIjQiH-1LQInc73qJ&_nc_ohc=sW6D2gbar5oQ7kNvwGHJjCd&_nc_oc=AdmvxO5GaVLgw2J7L6XY25wR9_h5XhNxoZEdA7PSF6cuq9Uy0AV9wG8Erm7vVqme8cURr_-8Kk8rumHPJybhZlus&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=JvqzkQ_D1OPpM4Tj62QXlw&oh=00_AfFU_Fs_SoxxGOjH7sTWzsqUj0Mc3BWGF_z8lBANnnCtsw&oe=68104D76" alt="Karate Training 2">
-        <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/464373289_27758032467128402_2593849887818832023_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=aa7094&_nc_eui2=AeFuSd0RPGjo2M8g_-F8a8qoAoD5Niz2n3sCgPk2LPafe1bDrtjFKcSLPn7JCxIhN-WeXdapwRcolYcuhu42390P&_nc_ohc=cr6QudM2gkkQ7kNvwH4I7_f&_nc_oc=Admzk72DkjmHTRc9oUBLgPjLoV0ZMW_B4xEp8qWUaTvpBC-KA3vfefjLSmwtwCwMFKwEs4fIlXTVYOvRBa8jl6BP&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=YCNaBfgwxHq8Z8Gmf6jFzQ&oh=00_AfForZ8L49zXc1JIIBY0mZMwIFXxWD2JgKcOhmrKZfAkKQ&oe=68104D40" alt="Karate Training 3">
-        <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/490596895_1407870427202371_1723937823369081584_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHvm3SdJIvmpw0sRMmsOpbXlLELSuiiiayUsQtK6KKJrBQI_A-fkDAHBtWECmlGZG0BKS5rYPuUngHIHznuP3V3&_nc_ohc=TgzLazN2GjoQ7kNvwGvqOU5&_nc_oc=AdlqWMYOFefJaRQyjy0y4RmC-74PYw9S0vrM_X4hTt-tgT-jov_qL7I-g5_Gz_W3co8U5SJh860q4-PHofiuE_lR&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=ZmGgAo15z9EJQLAech9xHw&oh=00_AfF_WHov0fTwWuObiVHRPJt15aH2FFzVm6KIU7cmQwUuEA&oe=6810529B" alt="Karate Training 4">
-      </div>    
-    </div>
+        <img src="back.jpg" alt="Training 1" class="active">
+        <img src="back2.jpg" alt="Training 2">
+        <img src="back.jpg" alt="Training 3">
+        <img src="back2.jpg" alt="Training 4">
+      </div>
+
   </section>
 
   <!-- Classes Section -->
@@ -265,18 +108,18 @@
   </section>
 
   <!-- Instructors Section -->
-  <section id="instructors" class="py-16">
+  <section id="instructors" class="py-16 bg-white">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Instructors</h2>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div class="flex flex-col sm:flex-row items-center bg-white p-6 rounded-lg shadow-lg card-hover">
+        <div class="flex flex-col sm:flex-row items-center bg-gray-50 p-6 rounded-lg shadow-lg card-hover">
           <img src="https://images.unsplash.com/photo-1598973963653-9b97f2cb64df?q=80&w=2070&auto=format&fit=crop" alt="Sensei John Doe" class="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-6 object-cover">
           <div class="text-center sm:text-left">
             <h3 class="text-xl font-bold mb-2">Sensei John Doe</h3>
             <p class="text-gray-600">5th Dan Black Belt with 20 years of teaching experience.</p>
           </div>
         </div>
-        <div class="flex flex-col sm:flex-row items-center bg-white p-6 rounded-lg shadow-lg card-hover">
+        <div class="flex flex-col sm:flex-row items-center bg-gray-50 p-6 rounded-lg shadow-lg card-hover">
           <img src="https://images.unsplash.com/photo-1601820843569-13210b5e0db0?q=80&w=2070&auto=format&fit=crop" alt="Sensei Jane Smith" class="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-6 object-cover">
           <div class="text-center sm:text-left">
             <h3 class="text-xl font-bold mb-2">Sensei Jane Smith</h3>
@@ -372,4 +215,24 @@
     });
   </script>
 </body>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let index = 0;
+    const slides = document.querySelectorAll('.slideshow img');
+
+    function showSlide() {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+          slide.classList.add('active');
+        }
+      });
+      index = (index + 1) % slides.length;
+    }
+
+    showSlide(); // Initial display
+    setInterval(showSlide, 4000); // Change every 4 seconds
+  });
+</script>
+
 </html>

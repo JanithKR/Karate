@@ -1,0 +1,257 @@
+/* Custom Slideshow Styles */
+.slideshow {
+  width: 100%;
+  max-width: 800px;
+  height: 250px;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slideshow img.active {
+  opacity: 1;
+}
+
+
+@media (min-width: 768px) {
+  .slideshow {
+    height: 350px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slideshow {
+    height: 400px;
+  }
+}
+
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fade 16s infinite;
+}
+
+.slideshow img:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.slideshow img:nth-child(2) {
+  animation-delay: 4s;
+}
+
+.slideshow img:nth-child(3) {
+  animation-delay: 8s;
+}
+
+.slideshow img:nth-child(4) {
+  animation-delay: 12s;
+}
+
+@keyframes fade {
+  0%   { opacity: 0; }
+  6.25%  { opacity: 1; }
+  25%  { opacity: 1; }
+  31.25%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Custom Text Shadow */
+.text-shadow-strong {
+  text-shadow: -1px 0 rgb(255, 255, 255), 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.text-shadow-header {
+  text-shadow: -1px 0 rgb(18, 163, 231), 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero Background - Only for the hero section */
+.hero-bg {
+  background-image: url('back2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.text-outline-black {
+  color: rgb(0, 0, 0);
+  -webkit-text-stroke: 1.5px black;
+  text-shadow: 1px 1px 1px black;
+}
+
+
+@media (max-width: 768px) {
+  .hero-bg {
+    background-attachment: scroll;
+  }
+}
+
+/* Responsive Typography */
+.hero-title {
+  font-size: 2rem;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+}
+
+.hero-text {
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-subtitle {
+    font-size: 2rem;
+  }
+  .hero-text {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+  .hero-subtitle {
+    font-size: 2.5rem;
+  }
+  .hero-text {
+    font-size: 1.5rem;
+  }
+}
+
+/* Header responsive text */
+.header-title {
+  font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .header-title {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* Hover Effects */
+.hover-scale:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.card-hover:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Additional Responsive Utilities */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+  
+  .hero-text {
+    font-size: 0.875rem;
+  }
+}
+
+/* Navigation Enhancements */
+nav {
+  backdrop-filter: blur(10px);
+}
+
+/* Button Enhancements */
+button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Form Input Enhancements */
+input:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Section Background Colors */
+body {
+  background-color: #f3f4f6; /* Light gray background for body */
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  .slideshow img {
+    animation: none;
+  }
+  
+  .hover-scale:hover {
+    transform: none;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .slideshow,
+  nav,
+  footer {
+    display: none;
+  }
+  
+  .hero-bg {
+    background: none;
+    color: black;
+  }
+  
+  .text-shadow-strong,
+  .text-shadow-header {
+    text-shadow: none;
+  }
+}
