@@ -1,3 +1,33 @@
+/* Navigation Styles */
+#navbar {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease, height 0.3s ease;
+}
+
+#navbar.scrolled {
+  background-color: rgba(189, 185, 185, 0.95) !important;
+  backdrop-filter: blur(10px);
+}
+
+#navbar.nav-hidden {
+  transform: translateY(-100%);
+}
+
+/* Mobile Navigation Select Styles */
+.mobile-nav-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23045851' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+  min-width: 100px;
+}
+
+.mobile-nav-select:focus {
+  border-color: rgb(4, 88, 81);
+  box-shadow: 0 0 0 2px rgba(4, 88, 81, 0.2);
+}
+
 /* Custom Slideshow Styles */
 .slideshow {
   width: 100%;
@@ -24,7 +54,6 @@
 .slideshow img.active {
   opacity: 1;
 }
-
 
 @media (min-width: 768px) {
   .slideshow {
@@ -64,11 +93,21 @@
 }
 
 @keyframes fade {
-  0%   { opacity: 0; }
-  6.25%  { opacity: 1; }
-  25%  { opacity: 1; }
-  31.25%  { opacity: 0; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+  }
+  6.25% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  31.25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Custom Text Shadow */
@@ -80,15 +119,6 @@
   text-shadow: -1px 0 rgb(18, 163, 231), 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-/* Mobile Menu Styles */
-.mobile-menu {
-  display: none;
-}
-
-.mobile-menu.active {
-  display: block;
-}
-
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
@@ -96,7 +126,7 @@ html {
 
 /* Hero Background - Only for the hero section */
 .hero-bg {
-  background-image: url('back2.jpg');
+  background-image: url("back2.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -108,7 +138,6 @@ html {
   -webkit-text-stroke: 1.5px black;
   text-shadow: 1px 1px 1px black;
 }
-
 
 @media (max-width: 768px) {
   .hero-bg {
@@ -187,15 +216,15 @@ html {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+
   .hero-title {
     font-size: 1.75rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1.25rem;
   }
-  
+
   .hero-text {
     font-size: 0.875rem;
   }
@@ -222,18 +251,27 @@ body {
   background-color: #f3f4f6; /* Light gray background for body */
 }
 
+/* Main Content Padding */
+.main-content {
+  padding-top: 80px; /* Default padding, will be adjusted by JavaScript */
+}
+
 /* Accessibility Improvements */
 @media (prefers-reduced-motion: reduce) {
   .slideshow img {
     animation: none;
   }
-  
+
   .hover-scale:hover {
     transform: none;
   }
-  
+
   html {
     scroll-behavior: auto;
+  }
+
+  #navbar {
+    transition: none;
   }
 }
 
@@ -244,14 +282,66 @@ body {
   footer {
     display: none;
   }
-  
+
   .hero-bg {
     background: none;
     color: black;
   }
-  
+
   .text-shadow-strong,
   .text-shadow-header {
     text-shadow: none;
   }
+
+  .main-content {
+    padding-top: 0;
+  }
+}
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 0.75rem;
+  }
+
+  #navbar {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .mobile-nav-select {
+    font-size: 0.875rem;
+    padding: 0.375rem 2rem 0.375rem 0.75rem;
+    min-width: 90px;
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+a,
+button,
+select {
+  transition: all 0.3s ease;
+}
+
+/* Focus styles for better accessibility */
+a:focus,
+button:focus,
+select:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Loading animation for better UX */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-content section {
+  animation: fadeIn 0.6s ease-out;
 }

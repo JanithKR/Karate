@@ -10,17 +10,20 @@
 
 <body class="bg-gray-200 font-sans">
   <!-- Navigation -->
-    <nav class="text-xl p-3 sticky top-0 z-50 shadow-lg" style="background-color: rgb(189, 185, 185); color: rgb(4, 88, 81);">
-      <div class="container mx-auto flex justify-between items-center px-4">
+  <nav id="navbar" class="text-xl p-3 fixed top-0 z-50 shadow-lg w-full transition-all duration-300" style="background-color: rgb(189, 185, 185); color: rgb(4, 88, 81);">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <!-- Logo and Title -->
       <div class="flex items-center space-x-3">
-          <img src="logonav.png" alt="Logo" class="h-10 w-auto">
-          <h1 class="header-title font-bold text-shadow-header text-outline-black drop-shadow-lg">
-            Kenseikan Karate-Sri Lanka
-          </h1>
-        </div>
+        <img src="logonav.png" alt="Logo" class="h-8 w-auto md:h-10">
+        <h1 class="header-title font-bold text-shadow-header text-outline-black drop-shadow-lg hidden sm:block">
+          Kenseikan Karate-Sri Lanka
+        </h1>
+        <!-- Compact title for mobile -->
+        <h1 class="text-sm font-bold text-shadow-header text-outline-black drop-shadow-lg sm:hidden">
+          Kenseikan Karate
+        </h1>
+      </div>
 
-
-      
       <!-- Desktop Menu -->
       <ul class="hidden md:flex space-x-6">
         <li><a href="#home" class="hover:text-gray-600 transition-colors duration-300">Home</a></li>
@@ -30,158 +33,178 @@
         <li><a href="#contact" class="hover:text-gray-600 transition-colors duration-300">Contact</a></li>
       </ul>
 
-      <!-- Mobile Menu Button -->
-      <button class="md:hidden focus:outline-none" onclick="toggleMobileMenu()">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="mobile-menu md:hidden mt-4 px-4">
-      <ul class="flex flex-col space-y-2">
-        <li><a href="#home" class="block py-2 hover:text-gray-600 transition-colors duration-300" onclick="closeMobileMenu()">Home</a></li>
-        <li><a href="#about" class="block py-2 hover:text-gray-600 transition-colors duration-300" onclick="closeMobileMenu()">About</a></li>
-        <li><a href="#classes" class="block py-2 hover:text-gray-600 transition-colors duration-300" onclick="closeMobileMenu()">Classes</a></li>
-        <li><a href="#instructors" class="block py-2 hover:text-gray-600 transition-colors duration-300" onclick="closeMobileMenu()">Instructors</a></li>
-        <li><a href="#contact" class="block py-2 hover:text-gray-600 transition-colors duration-300" onclick="closeMobileMenu()">Contact</a></li>
-      </ul>
+      <!-- Mobile Single Navigation Bar -->
+      <div class="md:hidden flex items-center">
+        <select id="mobileNavSelect" class="mobile-nav-select bg-transparent border-2 border-teal-800 rounded-md px-3 py-1 text-sm font-medium text-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-600" onchange="navigateToSection(this.value)">
+          <option value="">Navigate</option>
+          <option value="home">Home</option>
+          <option value="about">About</option>
+          <option value="classes">Classes</option>
+          <option value="instructors">Instructors</option>
+          <option value="contact">Contact</option>
+        </select>
+      </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="relative h-screen text-white flex items-center justify-center bg-cover bg-center bg-no-repeat" style="background-image: url('home.jpg');">
-  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+  <!-- Main Content with top padding to account for fixed nav -->
+  <div class="main-content">
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen text-white flex items-center justify-center bg-cover bg-center bg-no-repeat" style="background-image: url('home.jpg');">
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
-  <div class="relative z-10 text-center px-4 max-w-3xl mx-auto">
-    <h1 class="text-5xl md:text-6xl font-extrabold mb-4 text-outline-black drop-shadow-lg">
-    Kenseikan Karate
-    </h1>
-    <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-outline-black drop-shadow-lg">
-      House Of Fist And Honesty
-    </h2>
-    <p class="text-lg md:text-xl mb-6 text-outline-black drop-shadow-lg">
-      Join with us to build strength, discipline, and confidence.
-    </p>
-    <a href="#contact" class="inline-block bg-blue-900 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300 text-lg font-semibold transform hover:scale-105">
-      TAP TO JOIN
-    </a>
+      <div class="relative z-10 text-center px-4 max-w-3xl mx-auto">
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-4 text-outline-black drop-shadow-lg">
+          Kenseikan Karate
+        </h1>
+        <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-outline-black drop-shadow-lg">
+          House Of Fist And Honesty
+        </h2>
+        <p class="text-lg md:text-xl mb-6 text-outline-black drop-shadow-lg">
+          Join with us to build strength, discipline, and confidence.
+        </p>
+        <a href="#contact" class="inline-block bg-blue-900 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300 text-lg font-semibold transform hover:scale-105">
+          TAP TO JOIN
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+      <div class="container mx-auto text-center px-4">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8">About Us</h2>
+        <p class="text-lg max-w-4xl mx-auto mb-12 leading-relaxed">
+          Kenseikhan Karate Academy is dedicated to teaching traditional Karate with a focus on discipline, respect, and personal growth. Founded in 1984, our dojo has trained hundreds of students to achieve their black belts and beyond.
+        </p>
+      </div>
+    </section>
+
+    <!-- Classes Section -->
+    <section id="classes" class="bg-gray-100 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Classes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-lg card-hover">
+            <h3 class="text-xl font-bold mb-4 text-gray-800">Beginner Karate</h3>
+            <p class="text-gray-600 mb-4">For ages 6+, learn the fundamentals of Karate, including stances, punches, and kicks.</p>
+            <p class="font-semibold text-blue-900">Mon/Wed: 5:00 PM - 6:00 PM</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg card-hover">
+            <h3 class="text-xl font-bold mb-4 text-gray-800">Intermediate Karate</h3>
+            <p class="text-gray-600 mb-4">Build on your skills with advanced techniques and sparring practice.</p>
+            <p class="font-semibold text-blue-900">Tue/Thu: 6:00 PM - 7:00 PM</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg card-hover md:col-span-2 lg:col-span-1">
+            <h3 class="text-xl font-bold mb-4 text-gray-800">Black Belt Training</h3>
+            <p class="text-gray-600 mb-4">Exclusive training for advanced students aiming for mastery.</p>
+            <p class="font-semibold text-blue-900">Fri: 7:00 PM - 8:30 PM</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instructors Section -->
+    <section id="instructors" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Instructors</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div class="flex flex-col sm:flex-row items-center bg-gray-50 p-6 rounded-lg shadow-lg card-hover">
+            <img src="https://images.unsplash.com/photo-1598973963653-9b97f2cb64df?q=80&w=2070&auto=format&fit=crop" alt="Sensei John Doe" class="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-6 object-cover">
+            <div class="text-center sm:text-left">
+              <h3 class="text-xl font-bold mb-2">Sensei John Doe</h3>
+              <p class="text-gray-600">5th Dan Black Belt with 20 years of teaching experience.</p>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row items-center bg-gray-50 p-6 rounded-lg shadow-lg card-hover">
+            <img src="https://images.unsplash.com/photo-1601820843569-13210b5e0db0?q=80&w=2070&auto=format&fit=crop" alt="Sensei Jane Smith" class="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-6 object-cover">
+            <div class="text-center sm:text-left">
+              <h3 class="text-xl font-bold mb-2">Sensei Jane Smith</h3>
+              <p class="text-gray-600">3rd Dan Black Belt specializing in youth training.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-blue-900 text-white py-16">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8">Contact Us</h2>
+        <p class="text-lg max-w-3xl mx-auto mb-8 leading-relaxed">Ready to start your Karate journey? Reach out to us for more information or to schedule a free trial class.</p>
+        
+        <!-- Contact Info Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 max-w-4xl mx-auto">
+          <div class="bg-blue-800 p-4 rounded-lg">
+            <p class="font-semibold mb-2">📧 Email:</p>
+            <p>info@dragonkarate.com</p>
+          </div>
+          <div class="bg-blue-800 p-4 rounded-lg">
+            <p class="font-semibold mb-2">📞 Phone:</p>
+            <p>(123) 456-7890</p>
+          </div>
+          <div class="bg-blue-800 p-4 rounded-lg">
+            <p class="font-semibold mb-2">📍 Address:</p>
+            <p>123 Dojo Lane, Martial City, MC 12345</p>
+          </div>
+        </div>
+
+        <!-- Email Subscription -->
+        <div class="max-w-md mx-auto">
+          <div class="flex flex-col sm:flex-row gap-2">
+            <input type="email" placeholder="Enter your email" class="flex-1 p-3 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-white" id="emailInput">
+            <button class="bg-white text-blue-900 px-6 py-3 rounded-lg hover:bg-gray-200 transition-colors duration-300 font-semibold" onclick="subscribe()">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-6 text-center">
+      <p>&copy; 2025 Kenseikhan Karate Academy. All rights reserved.</p>
+    </footer>
   </div>
-</section>
-
-  <!-- About Section -->
-  <section id="about" class="py-16 bg-white">
-    <div class="container mx-auto text-center px-4">
-      <h2 class="text-3xl md:text-4xl font-bold mb-8">About Us</h2>
-      <p class="text-lg max-w-4xl mx-auto mb-12 leading-relaxed">
-        Kenseikhan Karate Academy is dedicated to teaching traditional Karate with a focus on discipline, respect, and personal growth. Founded in 1984, our dojo has trained hundreds of students to achieve their black belts and beyond.
-      </p>
-      
-      <!-- Responsive Slideshow 
-      <div class="slideshow">
-        <img src="back.jpg" alt="Training 1" class="active">
-        <img src="back2.jpg" alt="Training 2">
-        <img src="back.jpg" alt="Training 3">
-        <img src="back2.jpg" alt="Training 4">
-      </div>
-      -->
-  </section>
-
-  <!-- Classes Section -->
-  <section id="classes" class="bg-gray-100 py-16">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Classes</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow-lg card-hover">
-          <h3 class="text-xl font-bold mb-4 text-gray-800">Beginner Karate</h3>
-          <p class="text-gray-600 mb-4">For ages 6+, learn the fundamentals of Karate, including stances, punches, and kicks.</p>
-          <p class="font-semibold text-blue-900">Mon/Wed: 5:00 PM - 6:00 PM</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg card-hover">
-          <h3 class="text-xl font-bold mb-4 text-gray-800">Intermediate Karate</h3>
-          <p class="text-gray-600 mb-4">Build on your skills with advanced techniques and sparring practice.</p>
-          <p class="font-semibold text-blue-900">Tue/Thu: 6:00 PM - 7:00 PM</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg card-hover md:col-span-2 lg:col-span-1">
-          <h3 class="text-xl font-bold mb-4 text-gray-800">Black Belt Training</h3>
-          <p class="text-gray-600 mb-4">Exclusive training for advanced students aiming for mastery.</p>
-          <p class="font-semibold text-blue-900">Fri: 7:00 PM - 8:30 PM</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Instructors Section -->
-  <section id="instructors" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Instructors</h2>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div class="flex flex-col sm:flex-row items-center bg-gray-50 p-6 rounded-lg shadow-lg card-hover">
-          <img src="https://images.unsplash.com/photo-1598973963653-9b97f2cb64df?q=80&w=2070&auto=format&fit=crop" alt="Sensei John Doe" class="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-6 object-cover">
-          <div class="text-center sm:text-left">
-            <h3 class="text-xl font-bold mb-2">Sensei John Doe</h3>
-            <p class="text-gray-600">5th Dan Black Belt with 20 years of teaching experience.</p>
-          </div>
-        </div>
-        <div class="flex flex-col sm:flex-row items-center bg-gray-50 p-6 rounded-lg shadow-lg card-hover">
-          <img src="https://images.unsplash.com/photo-1601820843569-13210b5e0db0?q=80&w=2070&auto=format&fit=crop" alt="Sensei Jane Smith" class="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-6 object-cover">
-          <div class="text-center sm:text-left">
-            <h3 class="text-xl font-bold mb-2">Sensei Jane Smith</h3>
-            <p class="text-gray-600">3rd Dan Black Belt specializing in youth training.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="bg-blue-900 text-white py-16">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-8">Contact Us</h2>
-      <p class="text-lg max-w-3xl mx-auto mb-8 leading-relaxed">Ready to start your Karate journey? Reach out to us for more information or to schedule a free trial class.</p>
-      
-      <!-- Contact Info Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 max-w-4xl mx-auto">
-        <div class="bg-blue-800 p-4 rounded-lg">
-          <p class="font-semibold mb-2">📧 Email:</p>
-          <p>info@dragonkarate.com</p>
-        </div>
-        <div class="bg-blue-800 p-4 rounded-lg">
-          <p class="font-semibold mb-2">📞 Phone:</p>
-          <p>(123) 456-7890</p>
-        </div>
-        <div class="bg-blue-800 p-4 rounded-lg">
-          <p class="font-semibold mb-2">📍 Address:</p>
-          <p>123 Dojo Lane, Martial City, MC 12345</p>
-        </div>
-      </div>
-
-      <!-- Email Subscription -->
-      <div class="max-w-md mx-auto">
-        <div class="flex flex-col sm:flex-row gap-2">
-          <input type="email" placeholder="Enter your email" class="flex-1 p-3 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-white" id="emailInput">
-          <button class="bg-white text-blue-900 px-6 py-3 rounded-lg hover:bg-gray-200 transition-colors duration-300 font-semibold" onclick="subscribe()">Subscribe</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white p-6 text-center">
-    <p>&copy; 2025 Kenseikhan Karate Academy. All rights reserved.</p>
-  </footer>
 
   <script>
-    // Mobile Menu Toggle
-    function toggleMobileMenu() {
-      const mobileMenu = document.getElementById('mobileMenu');
-      mobileMenu.classList.toggle('active');
+    let lastScrollY = window.scrollY;
+
+    // Navigate to section from mobile select
+    function navigateToSection(sectionId) {
+      if (sectionId) {
+        const target = document.getElementById(sectionId);
+        if (target) {
+          const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+        // Reset select to default
+        document.getElementById('mobileNavSelect').value = '';
+      }
     }
 
-    function closeMobileMenu() {
-      const mobileMenu = document.getElementById('mobileMenu');
-      mobileMenu.classList.remove('active');
+    // Scroll behavior for navbar
+    function handleScroll() {
+      const navbar = document.getElementById('navbar');
+      const currentScrollY = window.scrollY;
+
+      // Add scrolled class for styling
+      if (currentScrollY > 10) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+
+      // Hide/show navbar based on scroll direction
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down - minimize navbar
+        navbar.classList.add('nav-hidden');
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up - show navbar
+        navbar.classList.remove('nav-hidden');
+      }
+
+      lastScrollY = currentScrollY;
     }
 
     // Email Subscription
@@ -195,15 +218,8 @@
       }
     }
 
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-      const nav = document.querySelector('nav');
-      const mobileMenu = document.getElementById('mobileMenu');
-      
-      if (!nav.contains(event.target)) {
-        mobileMenu.classList.remove('active');
-      }
-    });
+    // Event Listeners
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -211,33 +227,23 @@
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+          const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
           });
         }
       });
     });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set initial padding for main content
+      const navbar = document.getElementById('navbar');
+      const mainContent = document.querySelector('.main-content');
+      const navbarHeight = navbar.offsetHeight;
+      mainContent.style.paddingTop = navbarHeight + 'px';
+    });
   </script>
 </body>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    let index = 0;
-    const slides = document.querySelectorAll('.slideshow img');
-
-    function showSlide() {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) {
-          slide.classList.add('active');
-        }
-      });
-      index = (index + 1) % slides.length;
-    }
-
-    showSlide(); // Initial display
-    setInterval(showSlide, 4000); // Change every 4 seconds
-  });
-</script>
-
 </html>
